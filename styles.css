@@ -48,12 +48,9 @@ h3 { font-size: 1.35rem; }
 .notice-inner a { color: var(--white); font-weight: 700; text-decoration: none; }
 
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(12,31,51,.08); backdrop-filter: blur(18px); }
-.nav-wrap { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
-.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand img { flex: 0 0 auto; }
-.brand span { display: grid; line-height: 1; }
-.brand strong { color: var(--navy-900); font-family: "Manrope", sans-serif; font-size: 1.3rem; letter-spacing: -.03em; }
-.brand small { margin-top: 5px; color: var(--green-dark); font-size: .72rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.nav-wrap { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brand-logo-full { width: 205px; height: auto; flex: 0 0 auto; border-radius: 7px; }
 .site-nav { display: flex; align-items: center; gap: 26px; }
 .site-nav > a { color: #304056; font-weight: 700; font-size: .94rem; text-decoration: none; }
 .site-nav > a:not(.button):hover { color: var(--blue); }
@@ -191,6 +188,7 @@ h3 { font-size: 1.35rem; }
 .client-forms-intro > p { margin-bottom: 22px; color: var(--muted); font-size: 1.02rem; }
 .client-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .client-form-card { display: flex; flex-direction: column; min-height: 270px; padding: 30px; border: 1px solid #dde2dc; border-radius: 18px; background: rgba(255,255,255,.86); box-shadow: 0 14px 40px rgba(20,39,67,.055); }
+.client-form-card-returning { grid-column: 1 / -1; min-height: 230px; border-color: rgba(13,111,155,.35); background: linear-gradient(125deg, #fff, #f0f8fc); }
 .client-form-card-secure { border-color: rgba(120,184,42,.55); background: linear-gradient(150deg, #fbfff7, #fff); }
 .client-form-label { align-self: flex-start; margin-bottom: 22px; padding: 6px 10px; border-radius: 999px; color: #416f0d; background: #e9f6da; font-size: .7rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
 .client-form-card h3 { margin-bottom: 12px; font-size: 1.35rem; }
@@ -218,7 +216,7 @@ h3 { font-size: 1.35rem; }
 
 .site-footer { padding: 72px 0 28px; color: rgba(255,255,255,.64); background: var(--navy-950); }
 .footer-grid { display: grid; grid-template-columns: 1.1fr .75fr .75fr 1fr; gap: 48px; }
-.footer-brand strong { color: var(--white); }
+.footer-brand .brand-logo-full { width: 235px; margin-bottom: 18px; }
 .footer-grid h3 { margin-bottom: 18px; color: var(--white); font-size: .86rem; letter-spacing: .09em; text-transform: uppercase; }
 .footer-grid p { font-size: .88rem; }
 .footer-grid > div > a:not(.brand) { display: block; margin: 9px 0; color: rgba(255,255,255,.66); font-size: .9rem; text-decoration: none; }
@@ -259,9 +257,8 @@ h3 { font-size: 1.35rem; }
   .section { padding: 78px 0; }
   .notice-inner { min-height: 44px; justify-content: center; text-align: center; }
   .notice-inner span { display: none; }
-  .nav-wrap { min-height: 68px; }
-  .brand img { width: 42px; height: 42px; }
-  .brand strong { font-size: 1.14rem; }
+  .nav-wrap { min-height: 94px; }
+  .brand-logo-full { width: 168px; height: auto; }
   .hero-grid { min-height: auto; padding: 72px 0 78px; }
   .hero h1 { font-size: clamp(2.55rem, 13vw, 4rem); }
   .hero-actions { display: grid; }
@@ -272,6 +269,7 @@ h3 { font-size: 1.35rem; }
   .industry-list { justify-content: flex-start; }
   .section-heading { grid-template-columns: 1fr; gap: 20px; }
   .service-grid, .problem-list, .process-grid, .about-values, .client-form-grid, .footer-grid { grid-template-columns: 1fr; }
+  .client-form-card-returning { grid-column: auto; }
   .tax-help-grid { grid-template-columns: 1fr; }
   .tax-help-grid article { min-height: auto; }
   .tax-number { margin-bottom: 25px; }
