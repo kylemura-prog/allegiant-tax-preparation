@@ -21,5 +21,5 @@ The review build includes a `noindex, nofollow` directive. The custom domain and
 - Remove the temporary `noindex, nofollow` directive.
 - Add the custom domain in GitHub Pages and complete the DNS/HTTPS change.
 - Confirm public business hours before adding them to the site or structured data.
-- Publish reviewed Privacy Policy and Terms pages, then link them in the footer.
+- Review and approve the draft Privacy Policy and Website Terms now linked in the footer.
 - Manually verify the authenticated document-upload flow and Drive access settings.
