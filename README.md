@@ -1,2 +1,25 @@
-# allegiant-tax-preparation
-Official website for Allegiant Tax Preparation—providing tax preparation, bookkeeping, payroll, and small-business support locally and remotely.
+# Allegiant Tax Preparation website
+
+Draft source for the redesigned Allegiant Tax Preparation website.
+
+The public Google Site and custom domain remain unchanged until the replacement is reviewed and approved.
+
+## Preview locally
+
+Open `index.html` directly in a browser, or run a simple local HTTP server from this directory.
+
+## Publishing status
+
+GitHub Pages is enabled from the `redesign-draft` branch for review at:
+
+`https://kylemura-prog.github.io/allegiant-tax-preparation/`
+
+The review build includes a `noindex, nofollow` directive. The custom domain and current Google Site remain unchanged until the replacement is approved.
+
+## Launch checklist
+
+- Remove the temporary `noindex, nofollow` directive.
+- Add the custom domain in GitHub Pages and complete the DNS/HTTPS change.
+- Confirm public business hours before adding them to the site or structured data.
+- Publish reviewed Privacy Policy and Terms pages, then link them in the footer.
+- Manually verify the authenticated document-upload flow and Drive access settings.
