@@ -242,6 +242,7 @@ h3 { font-size: 1.35rem; }
 .cta-card p:not(.eyebrow) { margin-bottom: 0; color: rgba(255,255,255,.68); }
 .cta-actions { position: relative; z-index: 2; display: grid; gap: 10px; justify-items: stretch; }
 .cta-actions > a:not(.button) { color: rgba(255,255,255,.8); font-weight: 700; text-align: center; text-decoration: none; }
+.availability-note { color: rgba(255,255,255,.62); font-size: .78rem; line-height: 1.4; text-align: center; }
 
 .site-footer { padding: 72px 0 28px; color: rgba(255,255,255,.64); background: var(--navy-950); }
 .footer-grid { display: grid; grid-template-columns: 1.1fr .75fr .75fr 1fr; gap: 48px; }
