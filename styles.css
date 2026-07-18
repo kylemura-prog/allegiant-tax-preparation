@@ -185,6 +185,17 @@ h3 { font-size: 1.35rem; }
 .about-values strong { margin-bottom: 3px; color: var(--navy-800); }
 .about-values span { color: var(--muted); font-size: .78rem; }
 
+.client-forms-section { background: var(--cream); }
+.client-forms-heading { display: grid; grid-template-columns: 1fr .72fr; gap: 70px; align-items: end; margin-bottom: 46px; }
+.client-forms-heading h2 { max-width: 700px; margin-bottom: 0; }
+.client-forms-intro > p { margin-bottom: 22px; color: var(--muted); font-size: 1.02rem; }
+.client-form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.client-form-card { display: flex; flex-direction: column; min-height: 270px; padding: 30px; border: 1px solid #dde2dc; border-radius: 18px; background: rgba(255,255,255,.86); box-shadow: 0 14px 40px rgba(20,39,67,.055); }
+.client-form-card-secure { border-color: rgba(120,184,42,.55); background: linear-gradient(150deg, #fbfff7, #fff); }
+.client-form-label { align-self: flex-start; margin-bottom: 22px; padding: 6px 10px; border-radius: 999px; color: #416f0d; background: #e9f6da; font-size: .7rem; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
+.client-form-card h3 { margin-bottom: 12px; font-size: 1.35rem; }
+.client-form-card p { margin-bottom: 26px; color: var(--muted); font-size: .92rem; }
+
 .faq-section { background: #f5f7f8; }
 .faq-grid { display: grid; grid-template-columns: .72fr 1fr; gap: 90px; }
 .muted { color: var(--muted); }
@@ -220,7 +231,7 @@ h3 { font-size: 1.35rem; }
   .site-nav { gap: 18px; }
   .site-nav > a { font-size: .86rem; }
   .hero-grid { grid-template-columns: 1fr .72fr; gap: 38px; }
-  .section-heading, .split-grid, .about-grid, .faq-grid { gap: 50px; }
+  .section-heading, .split-grid, .about-grid, .client-forms-heading, .faq-grid { gap: 50px; }
   .service-card { padding: 26px; }
 }
 
@@ -233,7 +244,8 @@ h3 { font-size: 1.35rem; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-copy { max-width: none; }
   .hero-panel { max-width: 620px; }
-  .section-heading, .split-grid, .about-grid, .faq-grid, .cta-card { grid-template-columns: 1fr; }
+  .section-heading, .split-grid, .about-grid, .client-forms-heading, .faq-grid, .cta-card { grid-template-columns: 1fr; }
+  .client-forms-heading { gap: 24px; }
   .tax-help-intro { grid-template-columns: 1fr; gap: 24px; }
   .tax-help-grid { grid-template-columns: 1fr 1fr; }
   .service-grid { grid-template-columns: 1fr 1fr; }
@@ -259,7 +271,7 @@ h3 { font-size: 1.35rem; }
   .proof-inner { align-items: flex-start; flex-direction: column; }
   .industry-list { justify-content: flex-start; }
   .section-heading { grid-template-columns: 1fr; gap: 20px; }
-  .service-grid, .problem-list, .process-grid, .about-values, .footer-grid { grid-template-columns: 1fr; }
+  .service-grid, .problem-list, .process-grid, .about-values, .client-form-grid, .footer-grid { grid-template-columns: 1fr; }
   .tax-help-grid { grid-template-columns: 1fr; }
   .tax-help-grid article { min-height: auto; }
   .tax-number { margin-bottom: 25px; }
