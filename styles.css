@@ -195,7 +195,8 @@ h3 { font-size: 1.35rem; }
 .facebook-rating-copy small { color: rgba(255,255,255,.58); font-size: .8rem; }
 .facebook-rating-arrow { color: var(--gold); font-size: 1.15rem; }
 .review-card { margin: 0; padding: 44px; border: 1px solid rgba(255,255,255,.13); border-radius: var(--radius-lg); background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.055)); box-shadow: 0 30px 80px rgba(0,0,0,.22); }
-.review-stars { margin-bottom: 22px; color: var(--gold); font-size: 1.05rem; letter-spacing: .18em; }
+.review-kicker { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 22px; color: var(--gold); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.review-kicker span { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; color: var(--navy-950); background: var(--gold); font-size: .78rem; }
 .review-card blockquote { margin: 0; font-family: "Manrope", sans-serif; font-size: clamp(1.45rem, 2.6vw, 2.25rem); font-weight: 700; line-height: 1.42; letter-spacing: -.025em; }
 .review-card figcaption { display: grid; margin-top: 26px; }
 .review-card figcaption strong { color: var(--white); font-family: "Manrope", sans-serif; }
