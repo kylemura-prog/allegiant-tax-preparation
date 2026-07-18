@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260718g">
+  <link rel="stylesheet" href="styles.css?v=20260718h">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -389,6 +389,14 @@
           </div>
         </div>
 
+        <div class="form-safety-note" role="note" aria-label="Information security reminder">
+          <span aria-hidden="true">!</span>
+          <div>
+            <strong>Protect your personal information</strong>
+            <p>Do not send Social Security numbers, bank information, passwords or sensitive tax documents by text, ordinary email or a general inquiry form. Use the document-upload form only when Kyle requests it.</p>
+          </div>
+        </div>
+
         <div class="client-form-grid">
           <article class="client-form-card client-form-card-returning">
             <span class="client-form-label">Returning clients</span>
@@ -503,7 +511,13 @@
     </div>
     <div class="wrap footer-bottom">
       <p>© <span data-year></span> Allegiant Tax Preparation. All rights reserved.</p>
-      <p>Pricing and service availability depend on the scope and complexity of the request. Work begins after Allegiant confirms the required information and service terms.</p>
+      <div class="footer-bottom-right">
+        <p>Pricing and service availability depend on the scope and complexity of the request. Work begins after Allegiant confirms the required information and service terms.</p>
+        <nav class="footer-legal" aria-label="Legal information">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Website Terms</a>
+        </nav>
+      </div>
     </div>
   </footer>
 
