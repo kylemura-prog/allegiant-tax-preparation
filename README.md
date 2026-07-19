@@ -1,8 +1,6 @@
 # Allegiant Tax Preparation website
 
-Draft source for the redesigned Allegiant Tax Preparation website.
-
-The public Google Site and custom domain remain unchanged until the replacement is reviewed and approved.
+Source for the redesigned Allegiant Tax Preparation website.
 
 ## Preview locally
 
@@ -10,16 +8,18 @@ Open `index.html` directly in a browser, or run a simple local HTTP server from 
 
 ## Publishing status
 
-GitHub Pages is enabled from the `redesign-draft` branch for review at:
+GitHub Pages is enabled from the `redesign-draft` branch at:
 
 `https://kylemura-prog.github.io/allegiant-tax-preparation/`
 
-The review build includes a `noindex, nofollow` directive. The custom domain and current Google Site remain unchanged until the replacement is approved.
+Launch was approved on July 19, 2026. Search indexing and the custom-domain source configuration are enabled. IONOS DNS and GitHub HTTPS verification must be completed before the previous Google Site is retired.
 
 ## Launch checklist
 
-- Remove the temporary `noindex, nofollow` directive.
-- Add the custom domain in GitHub Pages and complete the DNS/HTTPS change.
-- Confirm public business hours before adding them to the site or structured data.
-- Review and approve the draft Privacy Policy and Website Terms now linked in the footer.
-- Manually verify the authenticated document-upload flow and Drive access settings.
+- [x] Remove the temporary `noindex, nofollow` directive.
+- [x] Add the custom-domain source files.
+- [x] Review and approve the Privacy Policy and Website Terms.
+- [x] Verify the authenticated document-upload flow and Google Form settings.
+- [ ] Configure IONOS DNS for the apex and `www` domains.
+- [ ] Confirm the GitHub Pages DNS check and enable HTTPS enforcement.
+- [ ] Verify both `allegianttaxprep.com` and `www.allegianttaxprep.com` before retiring the previous Google Site.
