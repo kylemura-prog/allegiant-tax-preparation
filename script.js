@@ -87,6 +87,14 @@ document.addEventListener('click', (event) => {
     return;
   }
 
+  if (href === 'https://g.page/r/CUECHvjMX15FEBM/review') {
+    sendAnalyticsEvent('review_link_open', {
+      review_platform: 'google',
+      link_placement: link.dataset.reviewPlacement || 'unknown'
+    });
+    return;
+  }
+
   if (href.startsWith('sms:')) {
     sendAnalyticsEvent('contact_click', { contact_method: 'text' });
   } else if (href.startsWith('mailto:')) {
