@@ -56,6 +56,8 @@ h3 { font-size: 1.35rem; }
 .site-nav { display: flex; align-items: center; gap: 26px; }
 .site-nav > a { color: #304056; font-weight: 700; font-size: .94rem; text-decoration: none; }
 .site-nav > a:not(.button):hover { color: var(--blue); }
+.site-nav > .nav-checkup-link { display: inline-flex; align-items: center; gap: 7px; color: var(--green-dark); }
+.site-nav > .nav-checkup-link::before { content: ""; width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(120,184,42,.13); }
 .menu-button { display: none; width: 44px; height: 44px; padding: 10px; border: 0; border-radius: 10px; background: var(--cream); }
 .menu-button span:not(.sr-only) { display: block; height: 2px; margin: 5px 0; background: var(--navy-900); }
 
