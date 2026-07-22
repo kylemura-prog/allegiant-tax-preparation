@@ -73,6 +73,20 @@ document.addEventListener('click', (event) => {
   const href = link.href;
   const formEvent = formEvents.get(href);
 
+  if (link.dataset.checkupPlacement) {
+    sendAnalyticsEvent('business_checkup_open', {
+      link_placement: link.dataset.checkupPlacement
+    });
+    return;
+  }
+
+  if (link.dataset.resource) {
+    sendAnalyticsEvent('resource_open', {
+      resource_name: link.dataset.resource
+    });
+    return;
+  }
+
   if (formEvent) {
     const parameters = {};
 
