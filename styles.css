@@ -78,7 +78,7 @@ h3 { font-size: 1.35rem; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--gold); font-size: .8rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .eyebrow span { display: inline-block; width: 24px; height: 2px; background: currentColor; }
 .eyebrow.dark { color: var(--green-dark); }
-.hero h1 { max-width: 770px; margin-bottom: 24px; }
+.hero h1 { max-width: 770px; margin-bottom: 24px; font-size: clamp(2.9rem, 5.3vw, 4.9rem); }
 .hero h1 em { color: var(--gold); font-style: normal; }
 .hero-lead { max-width: 680px; margin-bottom: 32px; color: rgba(255,255,255,.76); font-size: clamp(1.05rem, 1.7vw, 1.24rem); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
