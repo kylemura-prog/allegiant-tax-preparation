@@ -56,6 +56,7 @@ h3 { font-size: 1.35rem; }
 .site-nav { display: flex; align-items: center; gap: 26px; }
 .site-nav > a { color: #304056; font-weight: 700; font-size: .94rem; text-decoration: none; }
 .site-nav > a:not(.button):hover { color: var(--blue); }
+.site-nav > a[aria-current="page"] { color: var(--blue); }
 .site-nav > .nav-checkup-link { display: inline-flex; align-items: center; gap: 7px; color: var(--green-dark); }
 .site-nav > .nav-checkup-link::before { content: ""; width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(120,184,42,.13); }
 .menu-button { display: none; width: 44px; height: 44px; padding: 10px; border: 0; border-radius: 10px; background: var(--cream); }
@@ -264,6 +265,87 @@ h3 { font-size: 1.35rem; }
 .cta-actions > a:not(.button) { color: rgba(255,255,255,.8); font-weight: 700; text-align: center; text-decoration: none; }
 .availability-note { color: rgba(255,255,255,.62); font-size: .78rem; line-height: 1.4; text-align: center; }
 
+/* Dedicated bookkeeping services page */
+.bookkeeping-body { background: var(--white); }
+.bookkeeping-hero-grid { position: relative; z-index: 2; min-height: 680px; padding: 86px 0 96px; display: grid; grid-template-columns: 1.08fr .78fr; align-items: center; gap: 76px; }
+.bookkeeping-hero h1 { max-width: 800px; margin-bottom: 24px; font-size: clamp(2.9rem, 5.2vw, 5rem); }
+.bookkeeping-price-panel { padding: 34px; border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius-lg); background: rgba(255,255,255,.08); box-shadow: 0 36px 80px rgba(0,0,0,.22); backdrop-filter: blur(16px); }
+.bookkeeping-price-kicker { display: block; margin-bottom: 14px; color: var(--gold); font-size: .74rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.bookkeeping-hero-price { display: flex; align-items: baseline; gap: 9px; margin-bottom: 22px; }
+.bookkeeping-hero-price > span { color: rgba(255,255,255,.64); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.bookkeeping-hero-price strong { color: var(--gold); font-family: "Manrope", sans-serif; font-size: clamp(3rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -.06em; }
+.bookkeeping-hero-price small { color: var(--white); font-weight: 800; }
+.bookkeeping-price-panel > p:not(.bookkeeping-hero-price) { color: rgba(255,255,255,.7); }
+.bookkeeping-price-panel > ul { display: grid; gap: 11px; margin: 24px 0; padding: 0; list-style: none; }
+.bookkeeping-price-panel > ul li { position: relative; padding-left: 25px; color: rgba(255,255,255,.84); font-size: .92rem; }
+.bookkeeping-price-panel > ul li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 900; }
+.bookkeeping-panel-note { display: block; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.5); font-size: .74rem; line-height: 1.55; }
+
+.bookkeeping-support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.bookkeeping-support-card { min-height: 410px; padding: 32px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--white); box-shadow: 0 16px 50px rgba(20,39,67,.065); }
+.bookkeeping-support-card-featured { border-color: rgba(120,184,42,.48); background: linear-gradient(180deg, #fbfff7 0%, #fff 78%); }
+.bookkeeping-card-number { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 38px; border-radius: 13px; color: var(--white); background: var(--navy-800); font-size: .78rem; font-weight: 900; }
+.bookkeeping-support-card-featured .bookkeeping-card-number { color: var(--navy-950); background: var(--gold); }
+.bookkeeping-support-card h3 { margin-bottom: 14px; font-size: 1.55rem; }
+.bookkeeping-support-card > p { color: var(--muted); }
+.bookkeeping-support-card ul { display: grid; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
+.bookkeeping-support-card li { position: relative; padding-left: 24px; color: #405064; font-size: .9rem; }
+.bookkeeping-support-card li::before { content: "✓"; position: absolute; left: 0; color: var(--green-dark); font-weight: 900; }
+
+.bookkeeping-outcomes-section { background: var(--cream); }
+.bookkeeping-outcomes-grid { display: grid; grid-template-columns: .78fr 1fr; gap: 82px; align-items: center; }
+.bookkeeping-outcomes-copy h2 { margin-bottom: 24px; }
+.bookkeeping-outcomes-copy > p:not(.eyebrow) { margin-bottom: 28px; color: var(--muted); font-size: 1.04rem; }
+.bookkeeping-outcome-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.bookkeeping-outcome-list article { display: grid; grid-template-columns: auto 1fr; gap: 15px; min-height: 185px; padding: 24px; border: 1px solid #dde2dc; border-radius: 17px; background: rgba(255,255,255,.82); }
+.bookkeeping-outcome-list article > span { display: grid; place-items: center; width: 39px; height: 39px; border-radius: 11px; color: var(--navy-950); background: var(--gold); font-size: .72rem; font-weight: 900; }
+.bookkeeping-outcome-list h3 { margin-bottom: 8px; font-size: 1.08rem; letter-spacing: -.02em; }
+.bookkeeping-outcome-list p { margin: 0; color: var(--muted); font-size: .86rem; }
+
+.bookkeeping-pricing-section { background: var(--white); }
+.bookkeeping-pricing-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 20px; }
+.bookkeeping-plan-card { display: flex; flex-direction: column; min-height: 520px; padding: 38px; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: 0 20px 60px rgba(20,39,67,.09); }
+.bookkeeping-plan-card-primary { border-color: rgba(120,184,42,.5); background: linear-gradient(150deg, #fbfff7, #fff 70%); }
+.bookkeeping-plan-card-bundle { color: var(--white); border-color: transparent; background: linear-gradient(132deg, var(--navy-950), #153f62); }
+.bookkeeping-plan-heading { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: start; }
+.bookkeeping-plan-label { display: inline-flex; margin-bottom: 13px; padding: 6px 10px; border-radius: 999px; color: #416f0d; background: #e9f6da; font-size: .68rem; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-label { color: var(--navy-950); background: var(--gold); }
+.bookkeeping-plan-card h3 { max-width: 580px; margin-bottom: 16px; font-size: 1.65rem; }
+.bookkeeping-plan-card > p, .bookkeeping-plan-card > div > p { color: var(--muted); }
+.bookkeeping-plan-card-bundle > p, .bookkeeping-plan-card-bundle > div > p { color: rgba(255,255,255,.66); }
+.bookkeeping-plan-price { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-end; gap: 6px; margin: 0 0 24px; }
+.bookkeeping-plan-price span { width: 100%; color: var(--muted); font-size: .68rem; font-weight: 900; letter-spacing: .06em; text-align: right; text-transform: uppercase; }
+.bookkeeping-plan-price strong { color: var(--green-dark); font-family: "Manrope", sans-serif; font-size: 2.65rem; line-height: 1; letter-spacing: -.05em; }
+.bookkeeping-plan-price small { color: var(--navy-800); font-weight: 800; }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-price { justify-content: flex-start; margin-top: 16px; }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-price span { color: rgba(255,255,255,.55); text-align: left; }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-price strong { color: var(--gold); }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-price small { color: var(--white); }
+.bookkeeping-plan-list { display: grid; grid-template-columns: 1fr 1fr; gap: 11px 20px; margin: 12px 0 30px; padding: 0; list-style: none; }
+.bookkeeping-plan-list li { position: relative; padding-left: 24px; color: #405064; font-size: .9rem; }
+.bookkeeping-plan-list li::before { content: "✓"; position: absolute; left: 0; color: var(--green-dark); font-weight: 900; }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-list { grid-template-columns: 1fr; }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-list li { color: rgba(255,255,255,.78); }
+.bookkeeping-plan-card-bundle .bookkeeping-plan-list li::before { color: var(--green); }
+.bookkeeping-plan-card .button { align-self: flex-start; margin-top: auto; }
+.bookkeeping-pricing-note { max-width: 900px; margin: 24px auto 0; color: var(--muted); font-size: .8rem; line-height: 1.6; text-align: center; }
+
+.bookkeeping-owner-section { position: relative; overflow: hidden; color: var(--white); background: var(--navy-900); }
+.bookkeeping-owner-section::before { content: ""; position: absolute; width: 480px; height: 480px; right: -250px; top: -260px; border-radius: 50%; background: rgba(13,111,155,.2); box-shadow: 0 0 0 80px rgba(255,255,255,.018), 0 0 0 160px rgba(255,255,255,.012); }
+.bookkeeping-owner-grid { position: relative; display: grid; grid-template-columns: .7fr 1fr; gap: 80px; align-items: center; }
+.bookkeeping-owner-photo { position: relative; min-height: 540px; overflow: hidden; border-radius: var(--radius-lg); box-shadow: 0 28px 72px rgba(0,0,0,.28); }
+.bookkeeping-owner-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 46%, rgba(5,16,30,.9)); }
+.bookkeeping-owner-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+.bookkeeping-owner-photo > div { position: absolute; z-index: 2; left: 40px; right: 40px; bottom: 38px; display: grid; }
+.bookkeeping-owner-photo strong { font-family: "Manrope", sans-serif; font-size: 1.2rem; }
+.bookkeeping-owner-photo span { color: rgba(255,255,255,.58); font-size: .85rem; }
+.bookkeeping-owner-copy h2 { margin-bottom: 22px; }
+.bookkeeping-owner-copy > p:not(.eyebrow):not(.bookkeeping-review-source) { color: rgba(255,255,255,.68); font-size: 1.03rem; }
+.bookkeeping-owner-copy blockquote { margin: 34px 0 10px; padding-left: 24px; border-left: 4px solid var(--gold); font-family: "Manrope", sans-serif; font-size: clamp(1.25rem, 2.3vw, 1.8rem); font-weight: 700; line-height: 1.45; letter-spacing: -.02em; }
+.bookkeeping-review-source { color: rgba(255,255,255,.48); font-size: .76rem; }
+.bookkeeping-owner-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 28px; }
+.bookkeeping-owner-actions .text-link { margin: 0; color: var(--gold); }
+
 /* Small-business checkup campaign */
 .business-checkup-promo { padding: 0 0 108px; background: var(--cream); }
 .checkup-promo-card { position: relative; overflow: hidden; display: grid; grid-template-columns: 1.1fr .75fr; gap: 64px; align-items: center; padding: 58px 62px; border-radius: var(--radius-lg); color: var(--white); background: linear-gradient(125deg, var(--navy-950), #153c5e); box-shadow: var(--shadow); }
@@ -405,6 +487,10 @@ h3 { font-size: 1.35rem; }
   .section-heading, .split-grid, .about-grid, .reviews-heading, .client-forms-heading, .faq-grid { gap: 50px; }
   .service-card { padding: 26px; }
   .checkup-promo-card, .checkup-hero-grid, .checkup-layout, .checkup-followup-grid { gap: 46px; }
+  .bookkeeping-hero-grid { gap: 44px; }
+  .bookkeeping-outcomes-grid, .bookkeeping-owner-grid { gap: 50px; }
+  .bookkeeping-support-card { padding: 27px; }
+  .bookkeeping-plan-card { padding: 32px; }
 }
 
 @media (max-width: 860px) {
@@ -436,6 +522,12 @@ h3 { font-size: 1.35rem; }
   .checkup-intro { position: static; }
   .checkup-layout { gap: 36px; }
   .result-action-box { grid-template-columns: 1fr; }
+  .bookkeeping-hero-grid, .bookkeeping-outcomes-grid, .bookkeeping-pricing-grid, .bookkeeping-owner-grid { grid-template-columns: 1fr; }
+  .bookkeeping-hero-grid { min-height: auto; padding: 78px 0 86px; }
+  .bookkeeping-price-panel { max-width: 650px; }
+  .bookkeeping-outcome-list { grid-template-columns: 1fr 1fr; }
+  .bookkeeping-plan-card { min-height: auto; }
+  .bookkeeping-owner-photo { min-height: 620px; }
 }
 
 @media (max-width: 620px) {
@@ -503,6 +595,20 @@ h3 { font-size: 1.35rem; }
   .legal-toc { grid-template-columns: 1fr; }
   .legal-toc strong { grid-column: auto; }
   .legal-content { padding: 30px 22px; }
+  .bookkeeping-hero h1 { font-size: clamp(2.45rem, 12vw, 3.8rem); }
+  .bookkeeping-price-panel { padding: 26px 22px; }
+  .bookkeeping-support-grid, .bookkeeping-outcome-list, .bookkeeping-pricing-grid, .bookkeeping-plan-list { grid-template-columns: 1fr; }
+  .bookkeeping-support-card { min-height: auto; }
+  .bookkeeping-card-number { margin-bottom: 26px; }
+  .bookkeeping-outcome-list article { min-height: auto; }
+  .bookkeeping-plan-card { padding: 30px 23px; }
+  .bookkeeping-plan-heading { grid-template-columns: 1fr; }
+  .bookkeeping-plan-price, .bookkeeping-plan-price span { justify-content: flex-start; text-align: left; }
+  .bookkeeping-plan-card .button { width: 100%; }
+  .bookkeeping-owner-photo { min-height: 540px; }
+  .bookkeeping-owner-photo > div { left: 30px; right: 30px; bottom: 30px; }
+  .bookkeeping-owner-actions { align-items: stretch; flex-direction: column; }
+  .bookkeeping-owner-actions .button { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

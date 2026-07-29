@@ -1,0 +1,86 @@
+.service-page h1 {
+  font-size: clamp(2.55rem, 4.8vw, 4.55rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+
+.service-page h2 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -.032em;
+}
+
+.service-page .bookkeeping-hero-price strong {
+  font-size: clamp(2.7rem, 4.2vw, 3.6rem);
+}
+
+.service-panel-title {
+  margin: 18px 0 16px;
+  color: #f6c928;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(2rem, 3.1vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+
+.service-page-notices .bookkeeping-price-panel {
+  border-color: rgba(246, 201, 40, .34);
+}
+
+.service-page-notices .bookkeeping-support-card-featured,
+.service-page-payroll .bookkeeping-support-card-featured,
+.service-page-tax .bookkeeping-support-card-featured {
+  border-color: rgba(120, 184, 42, .58);
+}
+
+.service-page .bookkeeping-plan-price strong {
+  max-width: 260px;
+  font-size: clamp(1.9rem, 2.8vw, 2.45rem);
+  overflow-wrap: anywhere;
+}
+
+.service-page-notices .bookkeeping-plan-price strong {
+  font-size: clamp(1.85rem, 2.7vw, 2.35rem);
+}
+
+.service-page .bookkeeping-owner-copy blockquote {
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+}
+
+.service-page .availability-note {
+  color: rgba(255, 255, 255, .58);
+  font-size: .74rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.service-bundle-terms {
+  margin: -4px 0 0;
+  color: rgba(255, 255, 255, .72);
+  font-size: .76rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .service-page h1 {
+    font-size: clamp(2.4rem, 11vw, 3.15rem);
+  }
+
+  .service-page h2 {
+    font-size: clamp(1.9rem, 8.6vw, 2.35rem);
+  }
+
+  .service-panel-title {
+    font-size: clamp(1.85rem, 9vw, 2.35rem);
+  }
+
+  .service-page .site-nav .button {
+    width: 100%;
+  }
+
+  .service-bundle-terms {
+    text-align: left;
+  }
+}
