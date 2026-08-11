@@ -63,6 +63,128 @@
   text-align: center;
 }
 
+.prior-year-section {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background: linear-gradient(128deg, var(--navy-950), var(--navy-900) 58%, #10385a);
+}
+
+.prior-year-section::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -230px;
+  top: -250px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 76px rgba(255, 255, 255, .025), 0 0 0 152px rgba(255, 255, 255, .018);
+}
+
+.prior-year-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: .88fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.prior-year-copy h2 {
+  max-width: 650px;
+  margin-bottom: 22px;
+}
+
+.prior-year-copy > p:not(.eyebrow) {
+  max-width: 650px;
+  color: rgba(255, 255, 255, .72);
+  font-size: 1.06rem;
+}
+
+.prior-year-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.prior-year-contact {
+  color: rgba(255, 255, 255, .82);
+  font-size: .9rem;
+  font-weight: 800;
+  text-underline-offset: 4px;
+}
+
+.prior-year-details {
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(14px);
+}
+
+.prior-year-label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.prior-year-details h3 {
+  max-width: 520px;
+  margin-bottom: 24px;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.prior-year-details ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prior-year-details li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.prior-year-details li strong {
+  color: var(--white);
+  font-family: Manrope, sans-serif;
+  font-size: .88rem;
+}
+
+.prior-year-details li span {
+  color: rgba(255, 255, 255, .65);
+  font-size: .86rem;
+}
+
+.prior-year-note {
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  color: rgba(255, 255, 255, .55);
+  font-size: .74rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .prior-year-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+}
+
 @media (max-width: 620px) {
   .service-page h1 {
     font-size: clamp(2.4rem, 11vw, 3.15rem);
@@ -82,5 +204,22 @@
 
   .service-bundle-terms {
     text-align: left;
+  }
+
+  .prior-year-details {
+    padding: 28px 22px;
+  }
+
+  .prior-year-details li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .prior-year-actions {
+    display: grid;
+  }
+
+  .prior-year-actions .button {
+    width: 100%;
   }
 }
