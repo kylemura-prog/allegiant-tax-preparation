@@ -3,6 +3,10 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  server: {
+    host: '0.0.0.0',
+    allowedHosts: ['terminal.local']
+  },
   plugins: [
     {
       name: 'copy-checklist-pdf',
