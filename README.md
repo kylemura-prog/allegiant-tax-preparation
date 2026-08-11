@@ -12,7 +12,7 @@ GitHub Pages is enabled from the `redesign-draft` branch at:
 
 `https://kylemura-prog.github.io/allegiant-tax-preparation/`
 
-Launch was approved on July 19, 2026. Search indexing and the custom-domain source configuration are enabled. IONOS DNS and GitHub HTTPS verification must be completed before the previous Google Site is retired.
+Launch was approved on July 19, 2026. Search indexing, the custom domain, the apex-to-`www` redirect, and HTTPS are active.
 
 ## Launch checklist
 
@@ -20,6 +20,6 @@ Launch was approved on July 19, 2026. Search indexing and the custom-domain sour
 - [x] Add the custom-domain source files.
 - [x] Review and approve the Privacy Policy and Website Terms.
 - [x] Verify the authenticated document-upload flow and Google Form settings.
-- [ ] Configure IONOS DNS for the apex and `www` domains.
-- [ ] Confirm the GitHub Pages DNS check and enable HTTPS enforcement.
-- [ ] Verify both `allegianttaxprep.com` and `www.allegianttaxprep.com` before retiring the previous Google Site.
+- [x] Configure IONOS DNS for the apex and `www` domains.
+- [x] Confirm the GitHub Pages DNS check and HTTPS.
+- [x] Verify both `allegianttaxprep.com` and `www.allegianttaxprep.com`.

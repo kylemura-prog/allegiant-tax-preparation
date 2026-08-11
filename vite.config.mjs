@@ -27,6 +27,7 @@ export default defineConfig({
         bookkeepingServices: resolve(import.meta.dirname, 'bookkeeping-services-muskegon.html'),
         payrollServices: resolve(import.meta.dirname, 'payroll-services-muskegon.html'),
         taxPreparation: resolve(import.meta.dirname, 'tax-preparation-north-muskegon.html'),
+        priorYearTaxReturns: resolve(import.meta.dirname, 'prior-year-tax-returns-muskegon.html'),
         taxNoticeHelp: resolve(import.meta.dirname, 'tax-notice-help-michigan.html'),
         businessCheckup: resolve(import.meta.dirname, 'business-checkup.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),

@@ -38,6 +38,7 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 
 const formEvents = new Map([
   ['https://forms.gle/u7D3JK3aamz8LCbf8', { eventName: 'lead_form_open', service: 'general' }],
+  ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }],
   ['https://forms.gle/w6NeCckfgEDAptki9', { eventName: 'lead_form_open', service: 'bookkeeping' }],
   ['https://forms.gle/YDACshzbsKbde3J47', { eventName: 'lead_form_open', service: 'payroll' }],
   ['https://forms.gle/cwPe6g3mcN5rVSDF8', { eventName: 'client_form_open', formType: 'personal_tax_intake' }],
@@ -50,6 +51,7 @@ const formEvents = new Map([
 const inferGeneralLeadService = (linkText) => {
   const text = linkText.toLowerCase();
   if (text.includes('notice')) return 'notice_review';
+  if (text.includes('prior-year') || text.includes('unfiled')) return 'prior_year_tax';
   if (text.includes('tax review')) return 'tax_review';
   if (text.includes('tax preparation')) return 'tax_preparation';
   if (text.includes('business')) return 'business_services';
