@@ -54,3 +54,52 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 
   revealItems.forEach((item) => revealObserver.observe(item));
 }
+
+const formEvents = new Map([
+  ['https://forms.gle/u7D3JK3aamz8LCbf8', { eventName: 'lead_form_open', service: 'general' }],
+  ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }]
+]);
+
+const inferGeneralLeadService = (linkText) => {
+  const normalizedText = linkText.toLowerCase();
+  if (normalizedText.includes('tax return')) return 'tax_preparation';
+  if (normalizedText.includes('business')) return 'business_services';
+  return 'general';
+};
+
+const sendAnalyticsEvent = (eventName, parameters) => {
+  if (typeof window.gtag !== 'function') return;
+  window.gtag('event', eventName, {
+    ...parameters,
+    page_path: window.location.pathname,
+    transport_type: 'beacon'
+  });
+};
+
+document.addEventListener('click', (event) => {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+
+  const formEvent = formEvents.get(link.href);
+  if (formEvent) {
+    sendAnalyticsEvent(formEvent.eventName, {
+      service: formEvent.service === 'general'
+        ? inferGeneralLeadService(link.textContent.trim())
+        : formEvent.service
+    });
+    return;
+  }
+
+  if (link.dataset.checkupPlacement) {
+    sendAnalyticsEvent('business_checkup_open', {
+      link_placement: link.dataset.checkupPlacement
+    });
+    return;
+  }
+
+  if (link.href.startsWith('sms:')) {
+    sendAnalyticsEvent('contact_click', { contact_method: 'text' });
+  } else if (link.href.startsWith('mailto:')) {
+    sendAnalyticsEvent('contact_click', { contact_method: 'email' });
+  }
+});
