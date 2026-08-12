@@ -119,3 +119,66 @@ document.addEventListener('click', (event) => {
     sendAnalyticsEvent('contact_click', { contact_method: 'phone' });
   }
 });
+
+const taxSupportSection = document.querySelector('.service-page-tax section[aria-labelledby="tax-support-title"]');
+
+if (taxSupportSection && !document.getElementById('michigan-city-tax')) {
+  const cityTaxSection = document.createElement('section');
+  cityTaxSection.id = 'michigan-city-tax';
+  cityTaxSection.className = 'section section-light';
+  cityTaxSection.setAttribute('aria-labelledby', 'michigan-city-tax-title');
+  cityTaxSection.innerHTML = `
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark"><span></span> Michigan city tax filing</p>
+          <h2 id="michigan-city-tax-title">City income tax can depend on where you live, where you work, and what was withheld.</h2>
+        </div>
+        <p>Allegiant prepares applicable Michigan city income tax returns, including Muskegon-area filings, as part of a coordinated federal, state, and local filing process.</p>
+      </div>
+
+      <div class="bookkeeping-support-grid">
+        <article class="bookkeeping-support-card">
+          <span class="bookkeeping-card-number" aria-hidden="true">01</span>
+          <h3>Residency &amp; work location</h3>
+          <p>Review the facts that can affect a city filing, including where you lived during the year and where wages were actually earned.</p>
+          <ul>
+            <li>Resident and nonresident situations</li>
+            <li>Partial-year city residency</li>
+            <li>Work performed inside or outside the city</li>
+          </ul>
+        </article>
+
+        <article class="bookkeeping-support-card bookkeeping-support-card-featured">
+          <span class="bookkeeping-card-number" aria-hidden="true">02</span>
+          <h3>Local withholding &amp; wage details</h3>
+          <p>Compare W-2 local information, city withholding, employers, and work locations so the return reflects the records provided.</p>
+          <ul>
+            <li>City tax withheld on W-2s</li>
+            <li>Multiple employers or work locations</li>
+            <li>Local wage and withholding discrepancies</li>
+          </ul>
+        </article>
+
+        <article class="bookkeeping-support-card">
+          <span class="bookkeeping-card-number" aria-hidden="true">03</span>
+          <h3>Prior years &amp; city notices</h3>
+          <p>Need to catch up on a city return or respond to a notice? Allegiant can review the filing history, available records, and next steps.</p>
+          <ul>
+            <li>Unfiled prior-year city returns</li>
+            <li>City tax notices and document requests</li>
+            <li>Return review when something does not match</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="prior-year-actions">
+        <a class="button button-primary" href="https://forms.gle/u7D3JK3aamz8LCbf8" target="_blank" rel="noopener">Request tax preparation <span aria-hidden="true">→</span></a>
+        <a class="button button-ghost" href="tax-notice-help-michigan.html">Need help with a city tax notice?</a>
+      </div>
+      <p class="bookkeeping-pricing-note">Michigan city income tax rules and filing requirements vary by municipality. The applicable city return and documentation needs are confirmed from the specific facts of the taxpayer's situation.</p>
+    </div>
+  `;
+
+  taxSupportSection.insertAdjacentElement('afterend', cityTaxSection);
+}
