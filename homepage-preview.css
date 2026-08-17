@@ -177,6 +177,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 .checkup-card p { margin-bottom: 29px; color: #516053; font-size: .92rem; }
 .checkup-card .button { align-self: flex-start; min-height: 50px; font-size: .87rem; }
 .pricing-note { max-width: 880px; margin: 20px auto 0; color: var(--muted); font-size: .77rem; line-height: 1.55; text-align: center; }
+.estimated-tax-callout { margin-top: 18px; padding: 26px 30px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border: 1px solid rgba(120,184,42,.45); border-radius: 18px; background: linear-gradient(115deg, #f7fbf3, #ffffff); box-shadow: 0 13px 38px rgba(15,39,64,.05); }
+.estimated-tax-callout > div { max-width: 760px; }
+.estimated-tax-kicker { margin: 0 0 7px; color: var(--green-dark); font-size: .72rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.estimated-tax-callout h3 { margin: 0 0 8px; font-size: 1.32rem; }
+.estimated-tax-callout p:not(.estimated-tax-kicker) { margin: 0; color: var(--muted); font-size: .92rem; }
+.estimated-tax-callout > a { flex: 0 0 auto; color: var(--blue); font-weight: 900; text-decoration: none; white-space: nowrap; }
+.estimated-tax-callout > a span { display: inline-block; transition: transform .2s ease; }
+.estimated-tax-callout > a:hover span { transform: translateX(5px); }
 
 .process-section { padding: 110px 0; background: var(--white); }
 .process-layout { display: grid; grid-template-columns: .68fr 1fr; align-items: start; gap: 90px; }
@@ -228,6 +236,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
   .help-grid { grid-template-columns: repeat(2, 1fr); }
   .help-card { min-height: 320px; }
   .business-grid { grid-template-columns: 1fr 1fr; }
+  .estimated-tax-callout { align-items: flex-start; }
   .checkup-card { min-height: 320px; grid-column: 1 / -1; }
   .review-ribbon-grid { grid-template-columns: .75fr 1fr; }
   .review-ribbon-grid > :last-child { display: none; }
@@ -277,6 +286,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
   .help-section, .difference-section, .business-section, .process-section { padding: 84px 0; }
   .section-heading { margin-bottom: 34px; gap: 20px; }
   .help-grid, .business-grid { grid-template-columns: 1fr; }
+  .estimated-tax-callout { display: grid; gap: 16px; }
+  .estimated-tax-callout > a { white-space: normal; }
   .help-card { min-height: 300px; }
   .help-grid [data-reveal], .business-grid [data-reveal] { transition-delay: 0s !important; }
   .business-card, .checkup-card { min-height: 430px; }
