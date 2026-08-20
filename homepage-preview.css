@@ -124,7 +124,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 .section-heading { margin-bottom: 48px; display: grid; grid-template-columns: 1.05fr .72fr; align-items: end; gap: 72px; }
 .section-heading h2 { max-width: 760px; margin-bottom: 0; }
 .section-heading > p { margin: 0 0 7px; color: var(--muted); font-size: 1.04rem; }
-.help-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+.help-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; }
+.help-card { grid-column: span 2; }
+.help-card:nth-child(4), .help-card:nth-child(5) { grid-column: span 3; }
 .help-card { position: relative; min-height: 360px; padding: 28px; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--white); box-shadow: 0 14px 46px rgba(15,39,64,.06); text-decoration: none; transition: transform .23s ease, box-shadow .23s ease, border-color .23s ease; }
 .help-card:hover { transform: translateY(-6px); border-color: rgba(13,111,155,.36); box-shadow: 0 24px 60px rgba(15,39,64,.11); }
 .help-card-featured { border-color: rgba(120,184,42,.45); background: linear-gradient(180deg, #fbfff7 0%, #fff 78%); }
@@ -228,12 +230,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 .help-grid [data-reveal]:nth-child(2), .business-grid [data-reveal]:nth-child(2) { transition-delay: .07s; }
 .help-grid [data-reveal]:nth-child(3), .business-grid [data-reveal]:nth-child(3) { transition-delay: .14s; }
 .help-grid [data-reveal]:nth-child(4) { transition-delay: .21s; }
+.help-grid [data-reveal]:nth-child(5) { transition-delay: .28s; }
 
 @media (max-width: 1040px) {
   .hero-grid { grid-template-columns: 1fr 390px; gap: 44px; }
   .hero h1 { font-size: clamp(3rem, 6.5vw, 4.8rem); }
   .local-badge { right: -5px; }
   .help-grid { grid-template-columns: repeat(2, 1fr); }
+  .help-card, .help-card:nth-child(4), .help-card:nth-child(5) { grid-column: auto; }
   .help-card { min-height: 320px; }
   .business-grid { grid-template-columns: 1fr 1fr; }
   .estimated-tax-callout { align-items: flex-start; }

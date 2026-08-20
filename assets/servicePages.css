@@ -28,6 +28,11 @@
   border-color: rgba(246, 201, 40, .34);
 }
 
+.service-page-amendments .bookkeeping-price-panel {
+  border-color: rgba(246, 201, 40, .34);
+}
+
+.service-page-amendments .bookkeeping-support-card-featured,
 .service-page-notices .bookkeeping-support-card-featured,
 .service-page-payroll .bookkeeping-support-card-featured,
 .service-page-tax .bookkeeping-support-card-featured {
@@ -42,6 +47,10 @@
 
 .service-page-notices .bookkeeping-plan-price strong {
   font-size: clamp(1.85rem, 2.7vw, 2.35rem);
+}
+
+.service-page-amendments .bookkeeping-plan-price strong {
+  font-size: clamp(1.75rem, 2.55vw, 2.25rem);
 }
 
 .service-page .bookkeeping-owner-copy blockquote {
