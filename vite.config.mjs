@@ -25,6 +25,7 @@ export default defineConfig({
       input: {
         home: resolve(import.meta.dirname, 'index.html'),
         clientForms: resolve(import.meta.dirname, 'client-forms.html'),
+        michiganLlcSetup: resolve(import.meta.dirname, 'michigan-llc-filing-tax-setup.html'),
         bookkeepingServices: resolve(import.meta.dirname, 'bookkeeping-services-muskegon.html'),
         payrollServices: resolve(import.meta.dirname, 'payroll-services-muskegon.html'),
         taxPreparation: resolve(import.meta.dirname, 'tax-preparation-north-muskegon.html'),

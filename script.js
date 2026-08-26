@@ -45,6 +45,7 @@ const formEvents = new Map([
   ['https://forms.gle/xSDQTqv4LT4xgAWk7', { eventName: 'client_form_open', formType: 'schedule_c_intake' }],
   ['https://forms.gle/bJiJ38Xi8cFRBUGb6', { eventName: 'client_form_open', formType: 'tax_review_planning' }],
   ['https://form.jotform.com/262352465883061', { eventName: 'document_upload_open', formType: 'tax_document_upload' }],
+  ['https://form.jotform.com/262371528064053', { eventName: 'lead_form_open', service: 'michigan_llc_setup' }],
   ['https://docs.google.com/forms/d/e/1FAIpQLSf72701A8VHLU7sye4L3Vs9DtW-XPbHDOElVik2f8_tYkLpIQ/viewform', { eventName: 'client_form_open', formType: 'returning_client_update' }]
 ]);
 
