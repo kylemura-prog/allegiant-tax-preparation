@@ -38,6 +38,7 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 
 const formEvents = new Map([
   ['https://form.jotform.com/262375132305046', { eventName: 'lead_form_open', service: 'general' }],
+  ['https://form.jotform.com/262383785812062', { eventName: 'lead_form_open', service: 'tax_catch_up_review' }],
   ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }],
   ['https://forms.gle/w6NeCckfgEDAptki9', { eventName: 'lead_form_open', service: 'bookkeeping' }],
   ['https://forms.gle/YDACshzbsKbde3J47', { eventName: 'lead_form_open', service: 'payroll' }],
@@ -120,6 +121,70 @@ document.addEventListener('click', (event) => {
     sendAnalyticsEvent('contact_click', { contact_method: 'phone' });
   }
 });
+
+const priorYearHelpTitle = document.getElementById('prior-year-help-title');
+
+if (priorYearHelpTitle && !document.getElementById('tax-catch-up-review')) {
+  const catchUpSection = document.createElement('section');
+  catchUpSection.id = 'tax-catch-up-review';
+  catchUpSection.className = 'section section-light';
+  catchUpSection.setAttribute('aria-labelledby', 'tax-catch-up-review-title');
+  catchUpSection.innerHTML = `
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark"><span></span> Not sure what needs filing?</p>
+          <h2 id="tax-catch-up-review-title">Start with a $125 Tax Catch-Up &amp; IRS Transcript Review.</h2>
+        </div>
+        <p>A focused diagnostic review for people who are behind on taxes, missing original documents, or unsure which years actually need attention.</p>
+      </div>
+
+      <div class="bookkeeping-pricing-grid">
+        <article class="bookkeeping-plan-card bookkeeping-plan-card-primary">
+          <div class="bookkeeping-plan-heading">
+            <div>
+              <span class="bookkeeping-plan-label">Tax Catch-Up Review</span>
+              <h3>Get a clear filing plan before committing to full preparation.</h3>
+            </div>
+            <p class="bookkeeping-plan-price"><span>Upfront</span><strong>$125</strong><small>diagnostic review</small></p>
+          </div>
+          <p>The review can include available IRS transcripts and client-provided records to help identify:</p>
+          <ul class="bookkeeping-plan-list">
+            <li>Which tax years appear to need filing or further review</li>
+            <li>Important income or filing information shown on available transcripts</li>
+            <li>Documents or records that may still be needed</li>
+            <li>Major issues that should be addressed before preparation begins</li>
+            <li>A written next-step plan and separate preparation quote</li>
+          </ul>
+          <a class="button button-primary" href="https://form.jotform.com/262383785812062" target="_blank" rel="noopener">Request the $125 review <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="bookkeeping-plan-card">
+          <div class="bookkeeping-plan-heading">
+            <div>
+              <span class="bookkeeping-plan-label">Full preparation</span>
+              <h3>Already know which returns need to be prepared?</h3>
+            </div>
+            <p class="bookkeeping-plan-price"><span>Service</span><strong>Quoted</strong><small>by scope</small></p>
+          </div>
+          <p>You can skip the diagnostic review and request full prior-year preparation when the missing years and records are already reasonably clear.</p>
+          <ul class="bookkeeping-plan-list">
+            <li>Federal individual returns</li>
+            <li>Required state and applicable city returns</li>
+            <li>Self-employed reporting when records support it</li>
+            <li>Year-by-year filing instructions and results explanation</li>
+          </ul>
+          <a class="button button-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform" target="_blank" rel="noopener">Request prior-year preparation</a>
+        </article>
+      </div>
+
+      <p class="bookkeeping-pricing-note"><strong>Important:</strong> The $125 review is a diagnostic service, not tax-return preparation, filing, IRS representation, bookkeeping reconstruction, payment-plan setup, or detailed brokerage basis reconstruction. Payment is due before the review begins. If qualifying preparation identified through the review is started with Allegiant within 30 days of the written review, the $125 may be credited toward that work.</p>
+    </div>
+  `;
+
+  const priorYearHelpSection = priorYearHelpTitle.closest('section');
+  if (priorYearHelpSection) priorYearHelpSection.insertAdjacentElement('beforebegin', catchUpSection);
+}
 
 const taxSupportSection = document.querySelector('.service-page-tax section[aria-labelledby="tax-support-title"]');
 
