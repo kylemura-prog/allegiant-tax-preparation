@@ -38,6 +38,32 @@ document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
 
+const taxCatchUpPageUrl = 'prior-year-tax-returns-muskegon.html#tax-catch-up-review';
+
+const behindFilingHero = Array.from(document.querySelectorAll('.hero-actions a')).find((link) =>
+  link.textContent.toLowerCase().includes('behind on filing')
+);
+
+if (behindFilingHero) {
+  behindFilingHero.href = taxCatchUpPageUrl;
+  behindFilingHero.removeAttribute('target');
+  behindFilingHero.removeAttribute('rel');
+  const label = behindFilingHero.querySelector('span');
+  if (label) label.textContent = 'Behind on taxes? Start with a $125 review';
+}
+
+const priorYearHelpCard = document.querySelector('.help-card[href="prior-year-tax-returns-muskegon.html"]');
+
+if (priorYearHelpCard) {
+  priorYearHelpCard.href = taxCatchUpPageUrl;
+  const heading = priorYearHelpCard.querySelector('h3');
+  const description = priorYearHelpCard.querySelector('p');
+  const action = priorYearHelpCard.querySelector('strong');
+  if (heading) heading.textContent = 'Behind on taxes or missing prior years?';
+  if (description) description.textContent = 'Start with a $125 Tax Catch-Up & IRS Transcript Review when you are unsure which years need attention or what records are missing.';
+  if (action) action.innerHTML = 'See the $125 Tax Catch-Up Review <span aria-hidden="true">→</span>';
+}
+
 const revealItems = document.querySelectorAll('[data-reveal]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -79,6 +105,14 @@ const sendAnalyticsEvent = (eventName, parameters) => {
 document.addEventListener('click', (event) => {
   const link = event.target.closest('a[href]');
   if (!link) return;
+
+  if (link.pathname.endsWith('/prior-year-tax-returns-muskegon.html') && link.hash === '#tax-catch-up-review') {
+    sendAnalyticsEvent('tax_catch_up_offer_open', {
+      service: 'tax_catch_up_review',
+      link_placement: link.closest('.hero-actions') ? 'homepage_hero' : 'homepage_service_card'
+    });
+    return;
+  }
 
   const formEvent = formEvents.get(link.href);
   if (formEvent) {
