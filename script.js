@@ -37,7 +37,7 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 });
 
 const formEvents = new Map([
-  ['https://forms.gle/u7D3JK3aamz8LCbf8', { eventName: 'lead_form_open', service: 'general' }],
+  ['https://form.jotform.com/262375132305046', { eventName: 'lead_form_open', service: 'general' }],
   ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }],
   ['https://forms.gle/w6NeCckfgEDAptki9', { eventName: 'lead_form_open', service: 'bookkeeping' }],
   ['https://forms.gle/YDACshzbsKbde3J47', { eventName: 'lead_form_open', service: 'payroll' }],
@@ -174,7 +174,7 @@ if (taxSupportSection && !document.getElementById('michigan-city-tax')) {
       </div>
 
       <div class="prior-year-actions">
-        <a class="button button-primary" href="https://forms.gle/u7D3JK3aamz8LCbf8" target="_blank" rel="noopener">Request tax preparation <span aria-hidden="true">→</span></a>
+        <a class="button button-primary" href="https://form.jotform.com/262375132305046" target="_blank" rel="noopener">Request tax preparation <span aria-hidden="true">→</span></a>
         <a class="button button-ghost" href="tax-notice-help-michigan.html">Need help with a city tax notice?</a>
       </div>
       <p class="bookkeeping-pricing-note">Michigan city income tax rules and filing requirements vary by municipality. The applicable city return and documentation needs are confirmed from the specific facts of the taxpayer's situation.</p>
