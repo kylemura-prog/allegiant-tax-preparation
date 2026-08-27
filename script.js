@@ -36,9 +36,12 @@ document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
 
+const taxCatchUpPaymentUrl = 'https://square.link/u/dp9r2sP8';
+
 const formEvents = new Map([
   ['https://form.jotform.com/262375132305046', { eventName: 'lead_form_open', service: 'general' }],
   ['https://form.jotform.com/262383785812062', { eventName: 'lead_form_open', service: 'tax_catch_up_review' }],
+  [taxCatchUpPaymentUrl, { eventName: 'checkout_open', service: 'tax_catch_up_review' }],
   ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }],
   ['https://forms.gle/w6NeCckfgEDAptki9', { eventName: 'lead_form_open', service: 'bookkeeping' }],
   ['https://forms.gle/YDACshzbsKbde3J47', { eventName: 'lead_form_open', service: 'payroll' }],
@@ -123,6 +126,15 @@ document.addEventListener('click', (event) => {
 });
 
 const priorYearHelpTitle = document.getElementById('prior-year-help-title');
+const existingCatchUpSection = document.getElementById('tax-catch-up-review');
+
+if (existingCatchUpSection) {
+  const catchUpCta = existingCatchUpSection.querySelector('a.button.button-primary');
+  if (catchUpCta) {
+    catchUpCta.href = taxCatchUpPaymentUrl;
+    catchUpCta.innerHTML = 'Start My $125 Tax Catch-Up Review <span aria-hidden="true">→</span>';
+  }
+}
 
 if (priorYearHelpTitle && !document.getElementById('tax-catch-up-review')) {
   const catchUpSection = document.createElement('section');
@@ -156,7 +168,7 @@ if (priorYearHelpTitle && !document.getElementById('tax-catch-up-review')) {
             <li>Major issues that should be addressed before preparation begins</li>
             <li>A written next-step plan and separate preparation quote</li>
           </ul>
-          <a class="button button-primary" href="https://form.jotform.com/262383785812062" target="_blank" rel="noopener">Request the $125 review <span aria-hidden="true">→</span></a>
+          <a class="button button-primary" href="${taxCatchUpPaymentUrl}" target="_blank" rel="noopener">Start My $125 Tax Catch-Up Review <span aria-hidden="true">→</span></a>
         </article>
 
         <article class="bookkeeping-plan-card">
