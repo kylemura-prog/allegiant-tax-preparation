@@ -39,7 +39,7 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 const taxCatchUpPaymentUrl = 'https://square.link/u/dp9r2sP8';
 
 const formEvents = new Map([
-  ['https://form.jotform.com/262375132305046', { eventName: 'lead_form_open', service: 'general' }],
+  ['https://form.jotform.com/262371277777065', { eventName: 'lead_form_open', service: 'general' }],
   ['https://form.jotform.com/262383785812062', { eventName: 'lead_form_open', service: 'tax_catch_up_review' }],
   [taxCatchUpPaymentUrl, { eventName: 'checkout_open', service: 'tax_catch_up_review' }],
   ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }],
@@ -251,7 +251,7 @@ if (taxSupportSection && !document.getElementById('michigan-city-tax')) {
       </div>
 
       <div class="prior-year-actions">
-        <a class="button button-primary" href="https://form.jotform.com/262375132305046" target="_blank" rel="noopener">Request tax preparation <span aria-hidden="true">→</span></a>
+        <a class="button button-primary" href="https://form.jotform.com/262371277777065" target="_blank" rel="noopener">Request tax preparation <span aria-hidden="true">→</span></a>
         <a class="button button-ghost" href="tax-notice-help-michigan.html">Need help with a city tax notice?</a>
       </div>
       <p class="bookkeeping-pricing-note">Michigan city income tax rules and filing requirements vary by municipality. The applicable city return and documentation needs are confirmed from the specific facts of the taxpayer's situation.</p>
