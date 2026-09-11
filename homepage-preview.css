@@ -131,6 +131,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 .review-platform > span:last-child { display: grid; line-height: 1.22; }
 .review-platform strong { font-family: "Manrope", sans-serif; font-size: .72rem; }
 .review-platform small { margin-top: 3px; color: var(--muted); font-size: .63rem; }
+.review-request-link { margin-top: 14px; display: inline-flex; align-items: center; gap: 7px; color: var(--blue); font-size: .76rem; font-weight: 900; text-decoration: none; }
+.review-request-link span { transition: transform .2s ease; }
+.review-request-link:hover span { transform: translateX(4px); }
 .review-carousel { min-width: 0; padding-left: 42px; border-left: 1px solid var(--line); }
 .review-stage { position: relative; min-height: 262px; }
 .review-card { min-height: 262px; display: grid; align-content: space-between; animation: review-in .38s ease both; }
