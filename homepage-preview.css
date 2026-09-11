@@ -506,7 +506,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 }
 .about-photo {
   position: relative;
-  min-height: 610px;
+  width: min(100%, 390px);
+  aspect-ratio: 4 / 5;
+  min-height: 0;
+  justify-self: center;
   overflow: hidden;
   border-radius: 28px;
   background: var(--navy-900);
@@ -565,7 +568,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
 @media (max-width: 900px) {
   .local-brand-panel { min-height: 540px; }
   .about-grid { grid-template-columns: minmax(270px, .72fr) minmax(0, 1fr); gap: 38px; }
-  .about-photo { min-height: 560px; }
+  .about-photo { width: min(100%, 370px); min-height: 0; }
   .about-principles div { grid-template-columns: 1fr; }
 }
 
@@ -575,7 +578,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
   .map-dot { right: 60px; top: 132px; }
   .about-section { padding: 78px 0; }
   .about-grid { grid-template-columns: 1fr; gap: 38px; }
-  .about-photo { min-height: 520px; }
+  .about-photo { width: min(100%, 350px); min-height: 0; }
   .about-principles div { grid-template-columns: 1fr; }
 }
 
@@ -583,7 +586,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
   .local-brand-panel { min-height: 470px; padding: 34px 23px 23px; }
   .local-brand-logo { width: 185px; }
   .local-brand-footer span { font-size: .62rem; }
-  .about-photo { min-height: 460px; }
+  .about-photo { width: min(100%, 320px); min-height: 0; }
   .about-actions { align-items: stretch; flex-direction: column; }
   .about-actions .button { width: 100%; }
 }
