@@ -165,6 +165,32 @@ const formEvents = new Map([
   ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }]
 ]);
 
+const servicePageEvents = new Map([
+  ['/tax-preparation-north-muskegon.html', 'tax_preparation'],
+  ['/prior-year-tax-returns-muskegon.html', 'prior_year_tax'],
+  ['/amended-tax-return-help.html', 'amended_return'],
+  ['/tax-notice-help-michigan.html', 'notice_review'],
+  ['/bookkeeping-services-muskegon.html', 'bookkeeping'],
+  ['/payroll-services-muskegon.html', 'payroll'],
+  ['/michigan-llc-filing-tax-setup.html', 'michigan_llc_setup'],
+  ['/michigan-estimated-tax-payments.html', 'estimated_tax_guide'],
+  ['/business-checkup.html', 'business_checkup']
+]);
+
+const getLinkPlacement = (link) => {
+  if (link.closest('.mobile-action-bar')) return 'mobile_action_bar';
+  if (link.closest('.main-nav')) return 'header_navigation';
+  if (link.closest('.preseason-banner')) return 'filing_season_banner';
+  if (link.closest('.hero-actions')) return 'homepage_hero';
+  if (link.closest('.about-section')) return 'homepage_about';
+  if (link.closest('.reviews-showcase')) return 'homepage_reviews';
+  if (link.closest('.help-section')) return 'homepage_service_cards';
+  if (link.closest('.business-section')) return 'homepage_business_support';
+  if (link.closest('.final-cta')) return 'homepage_final_cta';
+  if (link.closest('.site-footer')) return 'footer';
+  return 'homepage_other';
+};
+
 const inferGeneralLeadService = (linkText) => {
   const normalizedText = linkText.toLowerCase();
   if (normalizedText.includes('tax return')) return 'tax_preparation';
@@ -188,7 +214,8 @@ document.addEventListener('click', (event) => {
   if (link.pathname.endsWith('/prior-year-tax-returns-muskegon.html') && link.hash === '#tax-catch-up-review') {
     sendAnalyticsEvent('tax_catch_up_offer_open', {
       service: 'tax_catch_up_review',
-      link_placement: link.closest('.hero-actions') ? 'homepage_hero' : 'homepage_service_card'
+      link_placement: getLinkPlacement(link),
+      link_text: link.textContent.trim()
     });
     return;
   }
@@ -198,14 +225,17 @@ document.addEventListener('click', (event) => {
     sendAnalyticsEvent(formEvent.eventName, {
       service: formEvent.service === 'general'
         ? inferGeneralLeadService(link.textContent.trim())
-        : formEvent.service
+        : formEvent.service,
+      link_placement: getLinkPlacement(link),
+      link_text: link.textContent.trim()
     });
     return;
   }
 
   if (link.dataset.checkupPlacement) {
     sendAnalyticsEvent('business_checkup_open', {
-      link_placement: link.dataset.checkupPlacement
+      link_placement: link.dataset.checkupPlacement,
+      link_text: link.textContent.trim()
     });
     return;
   }
@@ -213,14 +243,25 @@ document.addEventListener('click', (event) => {
   if (link.dataset.reviewPlatform) {
     sendAnalyticsEvent('review_link_open', {
       review_platform: link.dataset.reviewPlatform,
-      link_placement: 'homepage_review_carousel'
+      link_placement: link.dataset.reviewPlacement || getLinkPlacement(link),
+      link_text: link.textContent.trim()
+    });
+    return;
+  }
+
+  const service = servicePageEvents.get(link.pathname);
+  if (service) {
+    sendAnalyticsEvent('service_page_open', {
+      service,
+      link_placement: getLinkPlacement(link),
+      link_text: link.textContent.trim()
     });
     return;
   }
 
   if (link.href.startsWith('sms:')) {
-    sendAnalyticsEvent('contact_click', { contact_method: 'text' });
+    sendAnalyticsEvent('contact_click', { contact_method: 'text', link_placement: getLinkPlacement(link) });
   } else if (link.href.startsWith('mailto:')) {
-    sendAnalyticsEvent('contact_click', { contact_method: 'email' });
+    sendAnalyticsEvent('contact_click', { contact_method: 'email', link_placement: getLinkPlacement(link) });
   }
 });
