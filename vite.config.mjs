@@ -35,6 +35,7 @@ export default defineConfig({
         priorYearTaxReturns: resolve(import.meta.dirname, 'prior-year-tax-returns-muskegon.html'),
         taxNoticeHelp: resolve(import.meta.dirname, 'tax-notice-help-michigan.html'),
         businessCheckup: resolve(import.meta.dirname, 'business-checkup.html'),
+        thankYou: resolve(import.meta.dirname, 'thank-you.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         terms: resolve(import.meta.dirname, 'terms.html')
       }
