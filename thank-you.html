@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Received | Allegiant Tax Preparation</title>
+  <meta name="description" content="Your request has been received by Allegiant Tax Preparation.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#09182a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N78XZFZCXZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N78XZFZCXZ', {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+
+    if (!sessionStorage.getItem('allegiant_general_lead_recorded')) {
+      gtag('event', 'generate_lead', {
+        service: 'general',
+        form_provider: 'jotform',
+        form_id: '262371277777065',
+        page_path: '/thank-you.html',
+        transport_type: 'beacon'
+      });
+      sessionStorage.setItem('allegiant_general_lead_recorded', 'true');
+    }
+  </script>
+  <style>
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; color: #fff; background: radial-gradient(circle at 82% 12%, rgba(120,184,42,.24), transparent 26%), linear-gradient(135deg, #06111e, #0d2943 62%, #114165); }
+    .confirmation-shell { width: min(100% - 32px, 760px); padding: 64px 58px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 28px; background: rgba(9,24,42,.88); box-shadow: 0 28px 80px rgba(0,0,0,.28); }
+    .confirmation-shell::after { content: ""; position: absolute; right: -115px; bottom: -180px; width: 360px; height: 360px; border: 1px solid rgba(255,255,255,.09); border-radius: 50%; box-shadow: 0 0 0 60px rgba(255,255,255,.025); }
+    .confirmation-content { position: relative; z-index: 1; }
+    .confirmation-logo { width: 190px; padding: 7px 9px; border-radius: 12px; background: #fff; }
+    .confirmation-logo img { width: 100%; height: auto; display: block; }
+    .confirmation-check { width: 58px; height: 58px; margin: 42px 0 25px; display: grid; place-items: center; border-radius: 50%; color: #09182a; background: #f6c928; font-size: 1.7rem; font-weight: 900; }
+    h1 { max-width: 650px; margin: 0 0 18px; color: #fff; font-family: "Manrope", sans-serif; font-size: clamp(2.35rem, 6vw, 4.2rem); line-height: 1.02; letter-spacing: -.055em; }
+    .confirmation-lead { max-width: 620px; margin: 0; color: rgba(255,255,255,.72); font-size: 1.08rem; line-height: 1.7; }
+    .confirmation-note { max-width: 620px; margin: 28px 0 0; padding: 18px 20px; border-left: 3px solid #78b82a; color: rgba(255,255,255,.78); background: rgba(255,255,255,.055); font-size: .94rem; }
+    .confirmation-actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .confirmation-actions a { min-height: 52px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; color: #09182a; background: #f6c928; font-weight: 900; text-decoration: none; }
+    .confirmation-actions a:last-child { color: #fff; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.05); }
+    @media (max-width: 560px) { .confirmation-shell { padding: 42px 25px; border-radius: 22px; } .confirmation-check { margin-top: 34px; } .confirmation-actions { display: grid; } }
+  </style>
+</head>
+<body>
+  <main class="confirmation-shell">
+    <div class="confirmation-content">
+      <div class="confirmation-logo"><img src="assets/allegiant-original-logo.jpg" alt="Allegiant Tax Preparation" width="205" height="100"></div>
+      <div class="confirmation-check" aria-hidden="true">✓</div>
+      <h1>Your request has been received.</h1>
+      <p class="confirmation-lead">Thank you for contacting Allegiant Tax Preparation. Kyle will review the information you submitted and follow up directly with any questions and the appropriate next step.</p>
+      <p class="confirmation-note"><strong>Please don’t send sensitive tax documents by regular email or text.</strong> If documents are needed, you’ll receive instructions for the secure upload process.</p>
+      <div class="confirmation-actions">
+        <a href="index.html">Return to the homepage</a>
+        <a href="sms:+16165415158">Text Kyle</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
