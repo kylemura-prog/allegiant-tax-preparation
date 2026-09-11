@@ -391,3 +391,199 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   .js [data-reveal] { opacity: 1; transform: none; }
 }
+
+
+/* Local brand hero panel */
+.local-brand-panel {
+  position: relative;
+  width: min(100%, 455px);
+  min-height: 610px;
+  padding: 48px 42px 30px;
+  justify-self: end;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 30px;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 85% 12%, rgba(120,184,42,.25), transparent 27%),
+    linear-gradient(150deg, #102f4f 0%, #071728 68%, #06111e 100%);
+  box-shadow: var(--shadow-deep);
+}
+.local-brand-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.local-brand-map { position: absolute; inset: 0; opacity: .7; pointer-events: none; }
+.map-line {
+  position: absolute;
+  display: block;
+  width: 520px;
+  height: 210px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  transform: rotate(-22deg);
+}
+.map-line-one { right: -260px; top: 20px; }
+.map-line-two { right: -205px; top: 82px; }
+.map-line-three { right: -150px; top: 145px; }
+.map-dot {
+  position: absolute;
+  right: 78px;
+  top: 150px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid var(--gold);
+  border-radius: 50%;
+  background: var(--navy-950);
+  box-shadow: 0 0 0 10px rgba(246,201,40,.12);
+}
+.local-brand-content { position: relative; z-index: 2; }
+.local-brand-kicker {
+  margin: 0 0 16px;
+  color: var(--gold);
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+.local-brand-content h2 {
+  max-width: 340px;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(3.5rem, 6vw, 5.4rem);
+  line-height: .88;
+  letter-spacing: -.065em;
+}
+.local-brand-region {
+  margin: 24px 0 34px;
+  color: rgba(255,255,255,.68);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+.local-brand-logo {
+  width: 215px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 14px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 12px 35px rgba(0,0,0,.25);
+}
+.local-brand-logo img { width: 100%; height: auto; display: block; }
+.local-brand-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,.13);
+}
+.local-brand-footer span {
+  padding: 7px 9px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+  color: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.05);
+  font-size: .67rem;
+  font-weight: 800;
+}
+
+/* About Kyle */
+.about-section { padding: 112px 0; background: var(--white); }
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(310px, .72fr) minmax(0, 1.18fr);
+  align-items: center;
+  gap: 88px;
+}
+.about-photo {
+  position: relative;
+  min-height: 610px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--navy-900);
+  box-shadow: var(--shadow-soft);
+}
+.about-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4,13,24,.92), transparent 45%);
+  pointer-events: none;
+}
+.about-photo img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: 50% 38%; }
+.about-photo-label {
+  position: absolute;
+  z-index: 2;
+  right: 28px;
+  bottom: 27px;
+  left: 28px;
+  display: grid;
+  color: var(--white);
+}
+.about-photo-label strong { font-family: "Manrope", sans-serif; font-size: 1.45rem; }
+.about-photo-label span { margin-top: 4px; color: var(--gold); font-size: .76rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.about-copy h2 { max-width: 760px; margin-bottom: 23px; }
+.about-copy > p:not(.eyebrow) { max-width: 760px; color: var(--muted); font-size: 1rem; }
+.about-copy .about-lead { color: var(--navy-800); font-size: 1.08rem; font-weight: 600; }
+.about-principles {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.about-principles div {
+  padding: 19px 17px;
+  display: grid;
+  gap: 7px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--cream);
+}
+.about-principles strong { color: var(--navy-900); font-size: .86rem; }
+.about-principles span { color: var(--muted); font-size: .77rem; line-height: 1.5; }
+.about-actions { margin-top: 30px; display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
+.button-dark { color: var(--white); background: var(--navy-900); box-shadow: 0 12px 30px rgba(9,24,42,.18); }
+.button-dark:hover { background: var(--blue); box-shadow: 0 16px 36px rgba(13,111,155,.2); }
+.about-text-link { color: var(--blue); font-size: .88rem; font-weight: 900; text-decoration: none; }
+
+@media (max-width: 1040px) {
+  .local-brand-panel { min-height: 570px; padding-right: 34px; padding-left: 34px; }
+  .about-grid { gap: 54px; }
+  .about-principles { grid-template-columns: 1fr; }
+  .about-principles div { grid-template-columns: 155px 1fr; align-items: start; }
+}
+
+@media (max-width: 900px) {
+  .local-brand-panel { min-height: 540px; }
+  .about-grid { grid-template-columns: minmax(270px, .72fr) minmax(0, 1fr); gap: 38px; }
+  .about-photo { min-height: 560px; }
+  .about-principles div { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .local-brand-panel { width: 100%; min-height: 500px; padding: 38px 28px 26px; justify-self: stretch; }
+  .local-brand-content h2 { font-size: clamp(3.45rem, 19vw, 5rem); }
+  .map-dot { right: 60px; top: 132px; }
+  .about-section { padding: 78px 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 38px; }
+  .about-photo { min-height: 520px; }
+  .about-principles div { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .local-brand-panel { min-height: 470px; padding: 34px 23px 23px; }
+  .local-brand-logo { width: 185px; }
+  .local-brand-footer span { font-size: .62rem; }
+  .about-photo { min-height: 460px; }
+  .about-actions { align-items: stretch; flex-direction: column; }
+  .about-actions .button { width: 100%; }
+}
