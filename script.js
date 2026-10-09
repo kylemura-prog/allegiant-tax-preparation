@@ -39,12 +39,10 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 const taxCatchUpPaymentUrl = 'https://square.link/u/dp9r2sP8';
 
 const formEvents = new Map([
+  ['https://form.jotform.com/262813581514053', { eventName: 'client_form_open', formType: 'combined_tax_organizer' }],
   ['https://form.jotform.com/262371277777065', { eventName: 'lead_form_open', service: 'general' }],
   ['https://form.jotform.com/262383785812062', { eventName: 'lead_form_open', service: 'tax_catch_up_review' }],
   [taxCatchUpPaymentUrl, { eventName: 'checkout_open', service: 'tax_catch_up_review' }],
-  ['https://forms.gle/cwPe6g3mcN5rVSDF8', { eventName: 'client_form_open', formType: 'personal_tax_intake' }],
-  ['https://forms.gle/xSDQTqv4LT4xgAWk7', { eventName: 'client_form_open', formType: 'schedule_c_intake' }],
-  ['https://forms.gle/bJiJ38Xi8cFRBUGb6', { eventName: 'client_form_open', formType: 'tax_review_planning' }],
   ['https://form.jotform.com/262352465883061', { eventName: 'document_upload_open', formType: 'tax_document_upload' }],
   ['https://form.jotform.com/262371528064053', { eventName: 'lead_form_open', service: 'michigan_llc_setup' }],
 ]);
