@@ -42,19 +42,21 @@ const formEvents = new Map([
   ['https://form.jotform.com/262371277777065', { eventName: 'lead_form_open', service: 'general' }],
   ['https://form.jotform.com/262383785812062', { eventName: 'lead_form_open', service: 'tax_catch_up_review' }],
   [taxCatchUpPaymentUrl, { eventName: 'checkout_open', service: 'tax_catch_up_review' }],
-  ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }],
-  ['https://forms.gle/w6NeCckfgEDAptki9', { eventName: 'lead_form_open', service: 'bookkeeping' }],
-  ['https://forms.gle/YDACshzbsKbde3J47', { eventName: 'lead_form_open', service: 'payroll' }],
   ['https://forms.gle/cwPe6g3mcN5rVSDF8', { eventName: 'client_form_open', formType: 'personal_tax_intake' }],
   ['https://forms.gle/xSDQTqv4LT4xgAWk7', { eventName: 'client_form_open', formType: 'schedule_c_intake' }],
   ['https://forms.gle/bJiJ38Xi8cFRBUGb6', { eventName: 'client_form_open', formType: 'tax_review_planning' }],
   ['https://form.jotform.com/262352465883061', { eventName: 'document_upload_open', formType: 'tax_document_upload' }],
   ['https://form.jotform.com/262371528064053', { eventName: 'lead_form_open', service: 'michigan_llc_setup' }],
-  ['https://docs.google.com/forms/d/e/1FAIpQLSf72701A8VHLU7sye4L3Vs9DtW-XPbHDOElVik2f8_tYkLpIQ/viewform', { eventName: 'client_form_open', formType: 'returning_client_update' }]
 ]);
 
 const inferGeneralLeadService = (linkText) => {
   const text = linkText.toLowerCase();
+  if (text.includes('bookkeeping') && text.includes('payroll')) return 'bookkeeping_payroll';
+  if (text.includes('bookkeeping') || text.includes('books') || text.includes('cleanup')) return 'bookkeeping';
+  if (text.includes('payroll')) return 'payroll';
+  if (text.includes('amendment') || text.includes('amended')) return 'amended_return';
+  if (text.includes('returning client') || text.includes('annual update')) return 'returning_client_update';
+  if (text.includes('planning') || text.includes('estimated')) return 'tax_planning';
   if (text.includes('notice')) return 'notice_review';
   if (text.includes('prior-year') || text.includes('unfiled')) return 'prior_year_tax';
   if (text.includes('tax review')) return 'tax_review';
@@ -186,7 +188,7 @@ if (priorYearHelpTitle && !document.getElementById('tax-catch-up-review')) {
             <li>Self-employed reporting when records support it</li>
             <li>Year-by-year filing instructions and results explanation</li>
           </ul>
-          <a class="button button-dark" href="https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform" target="_blank" rel="noopener">Request prior-year preparation</a>
+          <a class="button button-dark" href="https://form.jotform.com/262371277777065" target="_blank" rel="noopener">Request prior-year preparation</a>
         </article>
       </div>
 

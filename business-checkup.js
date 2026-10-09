@@ -14,9 +14,7 @@ if (app) {
   let currentStep = 0;
   let hasStarted = false;
 
-  const generalRequestBase = 'https://docs.google.com/forms/d/e/1FAIpQLSewIbBRO6ZkvdvmQdmTelNsJvf3pLzSsKWxiN7TqC46WU62Lw/viewform';
-  const bookkeepingForm = 'https://forms.gle/w6NeCckfgEDAptki9';
-  const payrollForm = 'https://forms.gle/YDACshzbsKbde3J47';
+  const generalRequestBase = 'https://form.jotform.com/262371277777065';
 
   const sendCheckupEvent = (eventName, parameters = {}) => {
     if (typeof window.gtag !== 'function') return;
@@ -27,17 +25,7 @@ if (app) {
     });
   };
 
-  const buildQuickRequestUrl = (recommendation, services) => {
-    const parameters = new URLSearchParams();
-    parameters.set('usp', 'pp_url');
-    services.forEach((service) => parameters.append('entry.337635764', service));
-    parameters.set(
-      'entry.195147065',
-      `I completed the Small Business Books & Payroll Checkup. My recommended next step was: ${recommendation}. I would like a quick follow-up.`
-    );
-    parameters.set('entry.425461784', 'Not applicable');
-    return `${generalRequestBase}?${parameters.toString()}`;
-  };
+  const buildQuickRequestUrl = () => generalRequestBase;
 
   const getSelectedAnswer = () => {
     const activeStep = steps[currentStep];
@@ -142,56 +130,47 @@ if (app) {
         summary: 'Your answers show that the books and payroll process affect one another. Reviewing them together is the most efficient way to establish a reliable starting point.',
         reasons: [commonReasons[0], answerLabels[answers.payroll_status], 'Coordinating both systems can reduce duplicate work and make tax-time records more complete.'],
         actionTitle: 'Start with a short, no-obligation request.',
-        actionCopy: 'The quick form will be prefilled to show that you completed the checkup and need help with both services.',
+        actionCopy: 'Use Start Here to request bookkeeping and payroll help. Mention your checkup recommendation in your request.',
         services: ['Bookkeeping interest', 'Payroll interest'],
         primaryService: 'bookkeeping_payroll',
-        detailButtons: [
-          { label: 'Detailed bookkeeping form', href: bookkeepingForm, service: 'bookkeeping' },
-          { label: 'Detailed payroll form', href: payrollForm, service: 'payroll' }
-        ]
+        detailButtons: []
       },
       payroll: {
         title: 'A payroll setup or process review',
         summary: 'Payroll is the most time-sensitive part of your current process. A focused review can identify the right setup, support, and next deadline before small issues become larger ones.',
         reasons: [answerLabels[answers.employee_status], answerLabels[answers.payroll_status], 'A defined payroll workflow can make employee records, wage reporting, and recurring filings easier to manage.'],
         actionTitle: 'Ask for a quick payroll follow-up.',
-        actionCopy: 'Use the short prefilled request or provide more detail through the payroll interest form.',
+        actionCopy: 'Choose payroll in Start Here and mention your checkup recommendation.',
         services: ['Payroll interest'],
         primaryService: 'payroll',
-        detailButtons: [
-          { label: 'Open detailed payroll form', href: payrollForm, service: 'payroll' }
-        ]
+        detailButtons: []
       },
       cleanup: {
         title: 'Catch-up and cleanup bookkeeping',
         summary: 'The best first step is establishing complete, reconciled books for the period that is behind. Once the starting point is reliable, an ongoing process becomes much easier to maintain.',
         reasons: [commonReasons[0], commonReasons[1], 'A defined cleanup period helps separate the immediate project from any future monthly support.'],
         actionTitle: 'Request a quick cleanup follow-up.',
-        actionCopy: 'Use the short prefilled request or complete the detailed bookkeeping form if you already know the condition of your records.',
+        actionCopy: 'Choose bookkeeping in Start Here and describe the records that need catch-up or cleanup.',
         services: ['Bookkeeping interest'],
         primaryService: 'bookkeeping_cleanup',
-        detailButtons: [
-          { label: 'Open detailed bookkeeping form', href: bookkeepingForm, service: 'bookkeeping' }
-        ]
+        detailButtons: []
       },
       monthly: {
         title: 'Ongoing monthly bookkeeping support',
         summary: 'Your records appear close enough to current that a consistent monthly process may provide more value than waiting for a large cleanup project to develop.',
         reasons: [commonReasons[0], commonReasons[1], 'Monthly reconciliation and review can reduce year-end surprises and keep tax information easier to prepare.'],
         actionTitle: 'Explore a monthly bookkeeping fit.',
-        actionCopy: 'Use the short prefilled request or share more detail through the bookkeeping interest form.',
+        actionCopy: 'Choose bookkeeping in Start Here and tell Kyle about the monthly support you need.',
         services: ['Bookkeeping interest'],
         primaryService: 'bookkeeping_monthly',
-        detailButtons: [
-          { label: 'Open detailed bookkeeping form', href: bookkeepingForm, service: 'bookkeeping' }
-        ]
+        detailButtons: []
       },
       tax_ready: {
         title: 'A focused tax-readiness review',
         summary: 'Your core process may not need a full cleanup or payroll change. A focused review can help identify missing records, year-end tasks, and the information that should be ready for tax preparation.',
         reasons: [commonReasons[0], commonReasons[1], answerLabels[answers.payroll_status]],
         actionTitle: 'Ask Kyle to review the next step.',
-        actionCopy: 'The short request will be prefilled so you can explain what you want checked without completing a full onboarding form.',
+        actionCopy: 'Use Start Here to explain what you want checked and mention your tax-readiness recommendation.',
         services: ['Bookkeeping interest'],
         primaryService: 'tax_readiness',
         detailButtons: []
@@ -220,7 +199,7 @@ if (app) {
     const buttons = app.querySelector('[data-result-buttons]');
     const quickRequest = document.createElement('a');
     quickRequest.className = 'button button-primary';
-    quickRequest.href = buildQuickRequestUrl(recommendation.title, recommendation.services);
+    quickRequest.href = buildQuickRequestUrl();
     quickRequest.target = '_blank';
     quickRequest.rel = 'noopener';
     quickRequest.dataset.checkupService = recommendation.primaryService;

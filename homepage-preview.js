@@ -162,7 +162,6 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 
 const formEvents = new Map([
   ['https://form.jotform.com/262371277777065', { eventName: 'lead_form_open', service: 'general' }],
-  ['https://docs.google.com/forms/d/e/1FAIpQLSfYd_1Wv93x-GkjjlusejejgsEwlhEE7CnsRGPZOQ0FPNVF-w/viewform', { eventName: 'lead_form_open', service: 'prior_year_tax' }]
 ]);
 
 const servicePageEvents = new Map([
