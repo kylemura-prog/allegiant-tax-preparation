@@ -615,3 +615,28 @@ h3 { font-size: 1.35rem; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+
+/* Client forms: one clear entry point, then requested documents and organizers. */
+.client-form-card-start { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 48px; align-items: center; min-height: 0; padding: 40px; border-color: rgba(13,111,155,.25); background: linear-gradient(125deg, #fff, #edf7fc); }
+.client-form-card-start .client-form-label { display: inline-block; margin-bottom: 20px; color: var(--blue); background: #deeff6; }
+.client-form-card-start h3 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
+.client-form-card-start p { max-width: 620px; margin-bottom: 22px; }
+.form-service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.form-service-tags li { padding: 7px 12px; border: 1px solid #d4e5ee; border-radius: 999px; background: #fff; color: #284f68; font-size: .8rem; }
+.form-start-action .button { width: 100%; }
+.form-start-action p { margin: 15px 0 0; font-size: .82rem; }
+.form-next-steps { margin-top: 20px; }
+.client-form-card .form-card-footnote { margin: 20px 0 0; font-size: .82rem; }
+.form-organizer-heading { margin: 72px 0 30px; max-width: 790px; }
+.form-organizer-heading h2 { font-size: clamp(1.9rem, 3.3vw, 2.8rem); margin-bottom: 18px; }
+.form-organizer-heading > p:last-child { color: var(--muted); }
+.form-organizer-grid .client-form-card { min-height: 240px; box-shadow: none; }
+@media (max-width: 860px) {
+  .client-form-card-start { grid-template-columns: 1fr; gap: 26px; padding: 30px; }
+  .form-start-action { max-width: 420px; }
+}
+@media (max-width: 600px) {
+  .client-form-card-start { padding: 26px; }
+  .form-organizer-heading { margin-top: 52px; }
+}
