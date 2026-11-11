@@ -23,6 +23,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        catchUpBookkeeping: resolve(import.meta.dirname, 'catch-up-bookkeeping-muskegon.html'),
         michiganSalesTax: resolve(import.meta.dirname, 'michigan-sales-tax-help.html'),
         home: resolve(import.meta.dirname, 'index.html'),
         clientForms: resolve(import.meta.dirname, 'client-forms.html'),
